@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - include:
+        file: objects/users.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: data/development/users-data.sql
+        relativeToChangelogFile: true
+        contextFilter: development
