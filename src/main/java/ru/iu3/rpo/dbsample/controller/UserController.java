@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ru.iu3.rpo.dbsample.model.GroupEntity;
+import ru.iu3.rpo.dbsample.model.PermissionEntity;
 import ru.iu3.rpo.dbsample.model.UserEntity;
+import ru.iu3.rpo.dbsample.repository.GroupRepository;
+import ru.iu3.rpo.dbsample.repository.PermissionRepository;
 import ru.iu3.rpo.dbsample.repository.UserRepository;
 
 @RestController
@@ -15,6 +19,12 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    GroupRepository groupRepository;
+
+    @Autowired
+    PermissionRepository permissionRepository;
 
     @GetMapping("/users")
     public Object Users() {
@@ -31,6 +41,18 @@ public class UserController {
             userRepository.save(user);
         }
         return user;
+    }
+
+    @GetMapping("/groups")
+    public Object Groups() {
+        List<GroupEntity> groups =  groupRepository.findAll();
+        return groups;
+    }
+
+    @GetMapping("/permissions")
+    public Object Permissions() {
+        List<PermissionEntity> permissions =  permissionRepository.findAll();
+        return permissions;
     }
     
 }

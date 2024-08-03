@@ -1,0 +1,11 @@
+[
+  {
+    "name": "DB Sample Database", 
+    "type": "postgres",
+    "host": "localhost",
+    "port": "5435",
+    "username": "dbsample",
+    "password": "dbsample",
+    "database": "dbsample" 
+  }
+]

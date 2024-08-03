@@ -4,6 +4,43 @@ databaseChangeLog:
         relativeToChangelogFile: true
         contextFilter: production
     - include:
-        file: data/development/users-data.sql
+        file: objects/permissions.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: objects/groups.sql
+        relativeToChangelogFile: true
+        ontextFilter: production
+    - include:
+        file: objects/group-permissions.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: objects/user-groups.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+
+    - include:
+        file: data/users-data.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: data/development/users-dev-data.sql
         relativeToChangelogFile: true
         contextFilter: development
+    - include:
+        file: data/groups-data.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: data/permissions-data.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: data/user-groups-data.sql
+        relativeToChangelogFile: true
+        contextFilter: production
+    - include:
+        file: data/role-permissions-data.sql
+        relativeToChangelogFile: true
+        contextFilter: production

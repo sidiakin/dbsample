@@ -36,3 +36,6 @@ COMMENT ON column users.created_date IS 'Дата создания записи'
 COMMENT ON column users.last_updated_by IS 'Логин пользователя, изменившего запись';
 COMMENT ON column users.last_updated_date IS 'Дата последнего обновления записи';
 COMMENT ON column users.object_version_number IS 'Номер версии записи в БД';
+
+--changeset joe:users-2
+CREATE UNIQUE INDEX IF NOT EXISTS idx_user_u1 ON users (email);
